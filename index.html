@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Facts</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #fact {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Human Facts</h1>
+        <p id="fact"></p>
+        <button id="newFact">New Fact</button>
+    </div>
+    <script>
+        const facts = [
+          "Humans are the only animals that can cry tears of joy.",
+          "The average person has about 60,000 thoughts per day.",
+          "A human fetus develops fingerprints by the third month of pregnancy.",
+          "The human brain can store as much information as five sets of encyclopedias.",
+          "Human babies are born with about 300 bones, but as they grow, some bones fuse together, leaving adults with 206.",
+          "The human heart beats about 100,000 times per day.",
+          "Humans are the only animals that can blush.",
+          "The average person walks the equivalent of three times around the Earth in their lifetime.",
+          "The human tongue is the strongest muscle in the body, relative to its size.",
+          "The human eye can distinguish between over 10 million colors.",
+          "The human nose can remember up to 50,000 different scents.",
+          "Humans are the only animals that can laugh.",
+          "The human body produces enough heat in an hour to boil a gallon of water.",
+          "The human brain is about 80% water.",
+          "The average person spends about 6 years of their life dreaming."
+        ];
+
+        const factElement = document.getElementById("fact");
+        const newFactButton = document.getElementById("newFact");
+
+        function getRandomFact() {
+          const randomIndex = Math.floor(Math.random() * facts.length);
+          return facts[randomIndex];
+        }
+
+        function displayFact() {
+          factElement.textContent = getRandomFact();
+        }
+
+        newFactButton.addEventListener("click", displayFact);
+
+        // Display an initial fact on load
+        displayFact();
+    </script>
+</body>
+</html>
